@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <form
+      class="card"
+      style="
+        width: 75%;
+        position: relative;
+        padding: 10px;
+        left: 50%;
+        transform: translate(-50%, -0%);
+        background-color: rgb(216, 216, 216);
+      "
+      action="/download/{{name}}"
+    >
+      <h5 class="card-title">您的資料</h5>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">姓名</label>
+        </div>
+        <div
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon1"
+          name="name"
+        >
+          {{name}}
+        </div>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text ml-1" style="margin-right: 10px"
+            >性別</label
+          >
+        </div>
+        <div
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon1"
+          name="gender"
+        >
+          {% if isMan %} 男 {% else %} 女 {% endif %}
+        </div>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text ml-1" style="margin-right: 10px"
+            >農曆國歷</label
+          >
+        </div>
+        <div
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon1"
+          name="lunar"
+        >
+          {% if isLunar %} 農曆 {% else %} 國歷 {% endif %}
+        </div>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01"
+            >出生日期</label
+          >
+        </div>
+        <div
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon1"
+          name="date"
+        >
+          {{year}}-{{mon}}-{{day}}
+        </div>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text ml-1" style="margin-right: 10px"
+            >閏月</label
+          >
+        </div>
+        <div
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon1"
+          name="lunarMonth"
+        >
+          {% if isLeapMonth %} 是 {% else %} 否 {% endif %}
+        </div>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01"
+            >出生時間</label
+          >
+        </div>
+        <div
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon1"
+          name="date"
+        >
+          {{hr}}
+        </div>
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">時</label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-secondary mb-3 mx-2">
+        查看檔案
+      </button>
+      <a href="/" class="btn btn-danger mb-3"
+        ><button type="button" class="btn btn-danger">返回</button></a
+      >
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
